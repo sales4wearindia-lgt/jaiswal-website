@@ -1,269 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jaiswal Enterprises | Men's Sportswear & Casual Wear</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaiswal Enterprises – Men's Sports & Casual Wear</title>
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+<style>
     body {
-      font-family: system-ui, sans-serif;
-      background: #fff7f8;
-      color: #222;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f8f6f3;
+        color: #222;
     }
 
+    /* HEADER */
     header {
-      width: 100%;
-      background: #ffffff;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      position: sticky;
-      top: 0;
-      z-index: 20;
+        background: #0e1a2a;
+        padding: 18px 30px;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .logo { font-size: 22px; font-weight: 800; color: #e5384f; }
-
-    nav { display: flex; gap: 18px; font-size: 14px; font-weight: 600; }
-    nav a { color: #333; text-decoration: none; }
-    nav a:hover { color: #e5384f; }
-
-    .nav-whatsapp {
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #e5384f;
-      color: #fff;
+    header a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        margin-left: 20px;
     }
-
-    .container { max-width: 1200px; margin: auto; padding: 0 16px 40px; }
 
     /* SLIDER */
-    .slider-wrapper {
-      margin-top: 24px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.12);
-      border: 2px solid #ffd0da;
-      background: #000;
+    .slider {
+        width: 100%;
+        height: 420px;
+        overflow: hidden;
+        position: relative;
     }
 
-    .slider { position: relative; width: 100%; height: 500px; }
-    .slide { position: absolute; inset: 0; opacity: 0; transition: 0.6s; }
-    .slide.active { opacity: 1; }
-
-    .slide img {
-      width: 100%; height: 500px; object-fit: cover; cursor: pointer;
+    .slides {
+        display: flex;
+        width: 600%;
+        height: 100%;
+        animation: slide 25s infinite;
     }
 
-    .slider-dots {
-      position: absolute; bottom: 10px; left: 50%;
-      transform: translateX(-50%);
-      display: flex; gap: 6px;
+    .slides img {
+        width: 100%;
+        object-fit: cover;
     }
 
-    .slider-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: rgba(255,255,255,0.5);
-      cursor: pointer;
+    @keyframes slide {
+        0% { margin-left: 0%; }
+        15% { margin-left: 0%; }
+
+        20% { margin-left: -100%; }
+        35% { margin-left: -100%; }
+
+        40% { margin-left: -200%; }
+        55% { margin-left: -200%; }
+
+        60% { margin-left: -300%; }
+        75% { margin-left: -300%; }
+
+        80% { margin-left: -400%; }
+        90% { margin-left: -400%; }
+
+        95% { margin-left: -500%; }
+        100% { margin-left: -500%; }
     }
 
-    .slider-dot.active { background: #e5384f; }
+    /* ARROWS */
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 22px;
+        border-radius: 6px;
+        user-select: none;
+    }
 
-    /* PRODUCTS */
-    .product-grid {
-      margin-top: 30px;
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 18px;
+    .left-arrow { left: 10px; }
+    .right-arrow { right: 10px; }
+
+    /* Why Choose Us */
+    .why {
+        padding: 40px;
+        background: #ffffff;
+        text-align: center;
+    }
+
+    .why h2 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .why p {
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 750px;
+        margin: auto;
+        color: #444;
+    }
+
+    /* PRODUCT GRID */
+    .products {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .products h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 20px;
+        padding: 10px;
     }
 
     .product-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 12px;
-      border: 1px solid #ffd0da;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-      text-align: center;
+        background: #fff;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
 
     .product-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 1px solid #ffb7c5;
-      margin-bottom: 8px;
-      cursor: pointer;
+        width: 100%;
+        border-radius: 10px;
     }
 
+    .product-name {
+        margin-top: 12px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    /* FOOTER */
     footer {
-      margin-top: 40px;
-      background: #111;
-      color: #f3f3f3;
-      padding: 22px 16px;
+        padding: 20px;
+        text-align: center;
+        background: #0e1a2a;
+        color: #fff;
+        font-size: 16px;
+        margin-top: 40px;
     }
-
-    .footer-inner { max-width: 1200px; margin: auto; }
-
-    .floating-wa {
-      position: fixed;
-      right: 16px; bottom: 16px;
-      z-index: 30;
-    }
-
-    .floating-wa a {
-      width: 52px; height: 52px;
-      border-radius: 999px;
-      background: #25d366;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 26px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
-      text-decoration: none;
-    }
-
-    @media (max-width: 900px) {
-      .product-grid { grid-template-columns: repeat(2,1fr); }
-      .slider { height: 320px; }
-      .slide img { height: 320px; }
-    }
-
-    @media (max-width: 620px) {
-      header { flex-direction: column; gap: 8px; }
-      .product-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+</style>
 </head>
 <body>
 
-  <!-- WHATSAPP FLOAT BUTTON -->
-  <div class="floating-wa">
-    <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20order%20from%20website." target="_blank">✆</a>
-  </div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="logo">Jaiswal Enterprises</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#products">Products</a>
-      <a href="https://www.instagram.com/sales4wear" target="_blank">Instagram</a>
-      <a class="nav-whatsapp" href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20order." target="_blank">WhatsApp Direct</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="container">
-
-      <!-- SLIDER -->
-      <div class="slider-wrapper">
-        <div class="slider">
-
-          <div class="slide active">
-            <a href="https://wa.me/919560656584?text=I%20want%20bulk%20trackpants." target="_blank">
-              <img src="slider-trackpants.png" />
-            </a>
-          </div>
-
-          <div class="slide">
-            <a href="https://wa.me/919560656584?text=I%20want%20bulk%20shorts." target="_blank">
-              <img src="slider-shorts.png" />
-            </a>
-          </div>
-
-          <div class="slide">
-            <a href="https://wa.me/919560656584?text=I%20want%20bulk%20shirts." target="_blank">
-              <img src="slider-shirt-white.png" />
-            </a>
-          </div>
-
-          <div class="slide">
-            <a href="https://wa.me/919560656584?text=I%20want%20bulk%20shirts." target="_blank">
-              <img src="slider-shirt-black.png" />
-            </a>
-          </div>
-
-          <div class="slide">
-            <a href="https://wa.me/919560656584?text=I%20want%20bulk%20jackets." target="_blank">
-              <img src="jacket.png" />
-            </a>
-          </div>
-
-          <div class="slide">
-            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20to%20discuss%20custom%20branding." target="_blank">
-              <img src="slider-logo.png" />
-            </a>
-          </div>
-
-          <div class="slider-dots">
-            <div class="slider-dot active" data-index="0"></div>
-            <div class="slider-dot" data-index="1"></div>
-            <div class="slider-dot" data-index="2"></div>
-            <div class="slider-dot" data-index="3"></div>
-            <div class="slider-dot" data-index="4"></div>
-            <div class="slider-dot" data-index="5"></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PRODUCTS -->
-      <h2 id="products" style="text-align:center;margin-top:30px;">Product Highlights</h2>
-
-      <div class="product-grid">
-
-        <div class="product-card">
-          <img src="trackpant.png" onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20trackpants.')">
-          <h3>Trackpants</h3>
-        </div>
-
-        <div class="product-card">
-          <img src="tshirt.png" onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20tshirts.')">
-          <h3>T-Shirts</h3>
-        </div>
-
-        <div class="product-card">
-          <img src="jacket.png" onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20jackets.')">
-          <h3>Jackets</h3>
-        </div>
-
-      </div>
-
+<header>
+    JAISWAL ENTERPRISES
+    <div>
+        <a href="#products">Products</a>
+        <a href="https://wa.me/919560656584" target="_blank">WhatsApp</a>
     </div>
-  </main>
+</header>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div>Jaiswal Enterprises • Mukundpur, New Delhi</div>
-      <div>WhatsApp: 9560656584</div>
-      <div>Instagram: @sales4wear</div>
+<!-- SLIDER -->
+<div class="slider">
+    <div class="slides">
+        <img src="slider-1-trackpants.png">
+        <img src="slider-2-shorts.png">
+        <img src="slider-3-shirts.png">
+        <img src="slider-4-tshirts.png">
+        <img src="slider-5-jackets.png">
+        <img src="slider-6-brand.png">
     </div>
-  </footer>
+
+    <div class="arrow left-arrow" onclick="plusSlides(-1)">❮</div>
+    <div class="arrow right-arrow" onclick="plusSlides(1)">❯</div>
+</div>
 
 <script>
-let slides = document.querySelectorAll(".slide");
-let dots = document.querySelectorAll(".slider-dot");
-let current = 0;
-
-function showSlide(i) {
-  slides[current].classList.remove("active");
-  dots[current].classList.remove("active");
-  current = (i + slides.length) % slides.length;
-  slides[current].classList.add("active");
-  dots[current].classList.add("active");
+let index = 0;
+const slides = document.querySelector('.slides');
+function plusSlides(step){
+    index += step;
+    if(index < 0) index = 5;
+    if(index > 5) index = 0;
+    slides.style.marginLeft = "-" + (index * 100) + "%";
 }
-
-dots.forEach(d => {
-  d.onclick = () => showSlide(parseInt(d.dataset.index));
-});
-
-setInterval(() => showSlide(current + 1), 4000);
 </script>
+
+<!-- WHY CHOOSE US -->
+<div class="why">
+    <h2>Why Choose Jaiswal Enterprises?</h2>
+    <p>
+        Delhi-based wholesale supplier with premium quality <b>sportswear & casual wear</b>.  
+        We deal in: Dobby Lycra Trackpants, NS Lycra Trackpants, 4-Way Lycra Trackpants,  
+        Taiwan Lycra Trackpants, Karara Lycra Trackpants, Cotton Shirts,  
+        Premium Party Shirts, Shorts (all fabrics), T-Shirts, Formal Pants,  
+        Office Wear Shirts & much more.  
+        <br><br>
+        🔥 **Bulk mein best rate – not sasta, BEST quality!**  
+        Daily new designs available on WhatsApp.
+    </p>
+</div>
+
+<!-- PRODUCTS -->
+<div id="products" class="products">
+    <h2>Our Products</h2>
+
+    <div class="grid">
+
+        <div class="product-card">
+            <img src="product-trackpants.png">
+            <div class="product-name">Trackpants Collection</div>
+        </div>
+
+        <div class="product-card">
+            <img src="product-shorts.png">
+            <div class="product-name">Shorts – All Fabrics</div>
+        </div>
+
+        <div class="product-card">
+            <img src="product-shirts.png">
+            <div class="product-name">Shirts – Cotton / Party Wear</div>
+        </div>
+
+        <div class="product-card">
+            <img src="product-tshirts.png">
+            <div class="product-name">T-Shirts – Casual & Sports</div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    © 2025 Jaiswal Enterprises • Men's Sportswear & Casual Wear  
+    <br>Contact: 9560656584 • Delhi, India
+</footer>
 
 </body>
 </html>
