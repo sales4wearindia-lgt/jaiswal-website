@@ -6,11 +6,7 @@
   <title>Jaiswal Enterprises | Men's Sportswear & Casual Wear</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -18,7 +14,7 @@
       color: #222;
     }
 
-    /* HEADER / NAVBAR */
+    /* HEADER */
     header {
       width: 100%;
       background: #ffffff;
@@ -35,7 +31,6 @@
     .logo {
       font-size: 22px;
       font-weight: 800;
-      letter-spacing: 0.5px;
       color: #e5384f;
     }
 
@@ -52,9 +47,7 @@
       color: #333;
     }
 
-    nav a:hover {
-      color: #e5384f;
-    }
+    nav a:hover { color: #e5384f; }
 
     .nav-whatsapp {
       padding: 8px 14px;
@@ -63,22 +56,20 @@
       color: #fff;
     }
 
-    /* MAIN WRAPPER */
+    /* MAIN CONTAINER */
     .container {
-      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 16px 40px;
     }
 
-    /* HERO SLIDER */
+    /* SLIDER */
     .slider-wrapper {
       margin-top: 24px;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
       border: 2px solid #ffd0da;
-      background: #000;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.12);
     }
 
     .slider {
@@ -98,17 +89,14 @@
       width: 100%;
       height: 500px;
       object-fit: cover;
-      display: block;
       cursor: pointer;
     }
 
-    .slide.active {
-      opacity: 1;
-    }
+    .slide.active { opacity: 1; }
 
     .slider-dots {
       position: absolute;
-      bottom: 10px;
+      bottom: 12px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -116,11 +104,11 @@
     }
 
     .slider-dot {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.5);
-      border: 1px solid rgba(0, 0, 0, 0.3);
+      background: rgba(255,255,255,0.4);
+      border: 1px solid rgba(0,0,0,0.3);
       cursor: pointer;
     }
 
@@ -129,152 +117,99 @@
       border-color: #e5384f;
     }
 
-    /* SECTION TITLES */
+    /* PRODUCT GRID */
     .section-title {
       text-align: center;
       margin-top: 36px;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       font-size: 24px;
       font-weight: 700;
     }
 
     .section-subtitle {
       text-align: center;
+      margin-bottom: 22px;
       font-size: 13px;
       color: #666;
-      margin-bottom: 22px;
     }
 
-    /* PRODUCT GRID */
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
 
     .product-card {
-      background: #ffffff;
+      background: #fff;
       border-radius: 14px;
       padding: 12px;
       border: 1px solid #ffd0da;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
       text-align: center;
-      font-size: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
     }
 
     .product-card img {
       width: 100%;
       height: 220px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid #ffb7c5;
-      margin-bottom: 8px;
       cursor: pointer;
+      margin-bottom: 8px;
     }
 
-    .product-card h3 {
-      font-size: 16px;
-      margin: 6px 0 2px;
-    }
-
-    .product-card p {
-      font-size: 12px;
-      color: #666;
-    }
-
-    /* CONTACT / FOOTER */
+    /* FOOTER */
     footer {
       margin-top: 40px;
       background: #111;
-      color: #f3f3f3;
-      padding: 22px 16px;
-      font-size: 13px;
+      color: #eee;
+      padding: 24px 16px;
     }
 
     .footer-inner {
       max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      margin: auto;
+      font-size: 14px;
+      line-height: 1.6;
     }
 
-    .footer-title {
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .footer-note {
-      font-size: 12px;
-      color: #cccccc;
-    }
-
-    /* FLOATING WHATSAPP BUTTON */
+    /* FLOATING WHATSAPP */
     .floating-wa {
       position: fixed;
       right: 16px;
       bottom: 16px;
-      z-index: 30;
+      z-index: 40;
     }
 
     .floating-wa a {
       width: 52px;
       height: 52px;
-      border-radius: 999px;
       background: #25d366;
+      color: #fff;
+      border-radius: 999px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      font-size: 26px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      font-size: 28px;
       text-decoration: none;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
     }
 
-    .floating-wa a:hover {
-      background: #1eb656;
-    }
-
-    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 620px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-      nav {
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      .slider {
-        height: 320px;
-      }
-      .slide img {
-        height: 320px;
-      }
-      .product-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .slider, .slide img { height: 310px; }
+      .product-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- FLOATING WHATSAPP -->
+  <!-- WHATSAPP FLOATING BUTTON -->
   <div class="floating-wa">
-    <a
-      href="https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20bulk%20order%20from%20website."
-      target="_blank"
-      aria-label="WhatsApp Order"
-    >
-      ✆
-    </a>
+    <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20order%20from%20website." target="_blank">✆</a>
   </div>
 
   <!-- HEADER -->
@@ -284,83 +219,56 @@
       <a href="#">Home</a>
       <a href="#products">Products</a>
       <a href="https://www.instagram.com/sales4wear" target="_blank">Instagram</a>
-      <a
-        class="nav-whatsapp"
-        href="https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20bulk%20order%20from%20website."
-        target="_blank"
-      >
-        WhatsApp Direct
-      </a>
+      <a class="nav-whatsapp"
+         href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20order%20from%20website."
+         target="_blank">WhatsApp Direct</a>
     </nav>
   </header>
 
   <main>
     <div class="container">
 
-      <!-- SLIDER -->
+      <!-- SLIDER START -->
       <div class="slider-wrapper">
         <div class="slider">
-          <!-- 1: Trackpants -->
+
           <div class="slide active">
-            <a
-              href="https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20bulk%20trackpants%20collection."
-              target="_blank"
-            >
-              <img src="slider-trackpants.png" alt="Bulk Trackpants Collection" />
+            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20trackpants." target="_blank">
+              <img src="slider-trackpants.png" />
             </a>
           </div>
 
-          <!-- 2: Shorts -->
           <div class="slide">
-            <a
-              href="https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20bulk%20shorts%20collection."
-              target="_blank"
-            >
-              <img src="slider-shorts.png" alt="Bulk Shorts Collection" />
+            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20shorts." target="_blank">
+              <img src="slider-shorts.png" />
             </a>
           </div>
 
-          <!-- 3: White Shirts -->
           <div class="slide">
-            <a
-              href="https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20bulk%20shirts%20collection."
-              target="_blank"
-            >
-              <img src="slider-shirt-white.png" alt="Bulk Shirts Collection - White" />
+            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20shirts." target="_blank">
+              <img src="slider-shirt-white.png" />
             </a>
           </div>
 
-          <!-- 4: Dark Shirts -->
           <div class="slide">
-            <a
-              href="https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20bulk%20shirts%20collection."
-              target="_blank"
-            >
-              <img src="slider-shirt-black.png" alt="Bulk Shirts Collection - Dark" />
+            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20shirts." target="_blank">
+              <img src="slider-shirt-black.png" />
             </a>
           </div>
 
-          <!-- 5: Jacket / Winter -->
           <div class="slide">
-            <a
-              href="https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20winter%20jackets%20in%20bulk."
-              target="_blank"
-            >
-              <img src="jacket.png" alt="Bulk Winter Jackets" />
+            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20winter%20jackets." target="_blank">
+              <img src="jacket.png" />
             </a>
           </div>
 
-          <!-- 6: Brand / Logo -->
           <div class="slide">
-            <a
-              href="https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20to%20discuss%20custom%20branding%20orders."
-              target="_blank"
-            >
-              <img src="slider-logo.png" alt="Jaiswal Enterprises Branding" />
+            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20custom%20branding." target="_blank">
+              <img src="slider-logo.png" />
             </a>
           </div>
 
-          <!-- Dots -->
+          <!-- DOTS -->
           <div class="slider-dots">
             <div class="slider-dot active" data-index="0"></div>
             <div class="slider-dot" data-index="1"></div>
@@ -369,94 +277,31 @@
             <div class="slider-dot" data-index="4"></div>
             <div class="slider-dot" data-index="5"></div>
           </div>
+
         </div>
       </div>
+      <!-- SLIDER END -->
 
       <!-- PRODUCTS -->
       <h2 id="products" class="section-title">Product Highlights</h2>
-      <p class="section-subtitle">
-        Trackpants, T-Shirts, Jackets – sab WhatsApp par bulk order ke liye available.
-      </p>
+      <p class="section-subtitle">Trackpants • T-Shirts • Jackets – Bulk ready stock</p>
 
       <div class="product-grid">
-        <!-- Trackpant -->
         <div class="product-card">
-          <img
-            src="trackpant.png"
-            alt="Trackpants"
-            onclick="window.open('https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20bulk%20trackpants.', '_blank')"
-          />
+          <img src="trackpant.jpg"
+               onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20trackpants.', '_blank')" />
           <h3>Trackpants</h3>
-          <p>Micro bond / sports lower, wholesale quantity ke liye WhatsApp karein.</p>
         </div>
 
-        <!-- T-shirt -->
         <div class="product-card">
-          <img
-            src="tshirt.png"
-            alt="T-Shirts"
-            onclick="window.open('https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20bulk%20t-shirts.', '_blank')"
-          />
+          <img src="tshirt.jpg"
+               onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20tshirts.', '_blank')" />
           <h3>T-Shirts</h3>
-          <p>Dryfit & casual tees – multi colours, bulk order ke liye ready.</p>
         </div>
 
-        <!-- Jacket -->
         <div class="product-card">
-          <img
-            src="jacket.png"
-            alt="Jackets"
-            onclick="window.open('https://api.whatsapp.com/send?phone=919560656584&text=Hi%2C%20I%20want%20bulk%20jackets.', '_blank')"
-          />
+          <img src="jacket.jpg"
+               onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20jackets.', '_blank')" />
           <h3>Jackets</h3>
-          <p>Winter jackets / hoodies – premium segment, pan India dispatch.</p>
         </div>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-title">Jaiswal Enterprises</div>
-      <div>Owner: Jai Jaiswal • Mukundpur, New Delhi – 110042</div>
-      <div>WhatsApp / Call: +91 95606 56584 • Email: sales4wearindia@gmail.com</div>
-      <div>Instagram: @sales4wear</div>
-      <div class="footer-note">
-        COD par minimum 10% advance lagega. Exact terms WhatsApp chat me final honge.
-      </div>
-      <div>© <span id="year"></span> Jaiswal Enterprises. All rights reserved.</div>
-    </div>
-  </footer>
-
-  <script>
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Slider logic
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".slider-dot");
-    let current = 0;
-
-    function showSlide(index) {
-      slides[current].classList.remove("active");
-      dots[current].classList.remove("active");
-      current = (index + slides.length) % slides.length;
-      slides[current].classList.add("active");
-      dots[current].classList.add("active");
-    }
-
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const idx = parseInt(dot.getAttribute("data-index"), 10);
-        showSlide(idx);
-      });
-    });
-
-    setInterval(() => {
-      showSlide(current + 1);
-    }, 4000);
-  </script>
-</body>
-</html>
+      </d
