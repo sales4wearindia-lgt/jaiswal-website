@@ -9,12 +9,11 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, sans-serif;
       background: #fff7f8;
       color: #222;
     }
 
-    /* HEADER */
     header {
       width: 100%;
       background: #ffffff;
@@ -22,31 +21,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
       position: sticky;
       top: 0;
       z-index: 20;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-      color: #e5384f;
-    }
+    .logo { font-size: 22px; font-weight: 800; color: #e5384f; }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-    }
-
+    nav { display: flex; gap: 18px; font-size: 14px; font-weight: 600; }
+    nav a { color: #333; text-decoration: none; }
     nav a:hover { color: #e5384f; }
 
     .nav-whatsapp {
@@ -56,87 +40,46 @@
       color: #fff;
     }
 
-    /* MAIN CONTAINER */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 16px 40px;
-    }
+    .container { max-width: 1200px; margin: auto; padding: 0 16px 40px; }
 
     /* SLIDER */
     .slider-wrapper {
       margin-top: 24px;
       border-radius: 16px;
       overflow: hidden;
-      border: 2px solid #ffd0da;
       box-shadow: 0 12px 26px rgba(0,0,0,0.12);
+      border: 2px solid #ffd0da;
+      background: #000;
     }
 
-    .slider {
-      position: relative;
-      width: 100%;
-      height: 500px;
-    }
-
-    .slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 0.6s ease-in-out;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      cursor: pointer;
-    }
-
+    .slider { position: relative; width: 100%; height: 500px; }
+    .slide { position: absolute; inset: 0; opacity: 0; transition: 0.6s; }
     .slide.active { opacity: 1; }
 
+    .slide img {
+      width: 100%; height: 500px; object-fit: cover; cursor: pointer;
+    }
+
     .slider-dots {
-      position: absolute;
-      bottom: 12px;
-      left: 50%;
+      position: absolute; bottom: 10px; left: 50%;
       transform: translateX(-50%);
-      display: flex;
-      gap: 6px;
+      display: flex; gap: 6px;
     }
 
     .slider-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.4);
-      border: 1px solid rgba(0,0,0,0.3);
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.5);
       cursor: pointer;
     }
 
-    .slider-dot.active {
-      background: #e5384f;
-      border-color: #e5384f;
-    }
+    .slider-dot.active { background: #e5384f; }
 
-    /* PRODUCT GRID */
-    .section-title {
-      text-align: center;
-      margin-top: 36px;
-      margin-bottom: 6px;
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      margin-bottom: 22px;
-      font-size: 13px;
-      color: #666;
-    }
-
+    /* PRODUCTS */
     .product-grid {
+      margin-top: 30px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
     }
 
     .product-card {
@@ -144,70 +87,60 @@
       border-radius: 14px;
       padding: 12px;
       border: 1px solid #ffd0da;
-      text-align: center;
       box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      text-align: center;
     }
 
     .product-card img {
       width: 100%;
       height: 220px;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 10px;
       border: 1px solid #ffb7c5;
-      cursor: pointer;
       margin-bottom: 8px;
+      cursor: pointer;
     }
 
-    /* FOOTER */
     footer {
       margin-top: 40px;
       background: #111;
-      color: #eee;
-      padding: 24px 16px;
+      color: #f3f3f3;
+      padding: 22px 16px;
     }
 
-    .footer-inner {
-      max-width: 1200px;
-      margin: auto;
-      font-size: 14px;
-      line-height: 1.6;
-    }
+    .footer-inner { max-width: 1200px; margin: auto; }
 
-    /* FLOATING WHATSAPP */
     .floating-wa {
       position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 40;
+      right: 16px; bottom: 16px;
+      z-index: 30;
     }
 
     .floating-wa a {
-      width: 52px;
-      height: 52px;
-      background: #25d366;
-      color: #fff;
+      width: 52px; height: 52px;
       border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      text-decoration: none;
+      background: #25d366;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 26px;
       box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      text-decoration: none;
     }
 
     @media (max-width: 900px) {
-      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-grid { grid-template-columns: repeat(2,1fr); }
+      .slider { height: 320px; }
+      .slide img { height: 320px; }
     }
 
     @media (max-width: 620px) {
-      .slider, .slide img { height: 310px; }
+      header { flex-direction: column; gap: 8px; }
       .product-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- WHATSAPP FLOATING BUTTON -->
+  <!-- WHATSAPP FLOAT BUTTON -->
   <div class="floating-wa">
     <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20order%20from%20website." target="_blank">✆</a>
   </div>
@@ -219,56 +152,53 @@
       <a href="#">Home</a>
       <a href="#products">Products</a>
       <a href="https://www.instagram.com/sales4wear" target="_blank">Instagram</a>
-      <a class="nav-whatsapp"
-         href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20order%20from%20website."
-         target="_blank">WhatsApp Direct</a>
+      <a class="nav-whatsapp" href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20order." target="_blank">WhatsApp Direct</a>
     </nav>
   </header>
 
   <main>
     <div class="container">
 
-      <!-- SLIDER START -->
+      <!-- SLIDER -->
       <div class="slider-wrapper">
         <div class="slider">
 
           <div class="slide active">
-            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20trackpants." target="_blank">
+            <a href="https://wa.me/919560656584?text=I%20want%20bulk%20trackpants." target="_blank">
               <img src="slider-trackpants.png" />
             </a>
           </div>
 
           <div class="slide">
-            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20shorts." target="_blank">
+            <a href="https://wa.me/919560656584?text=I%20want%20bulk%20shorts." target="_blank">
               <img src="slider-shorts.png" />
             </a>
           </div>
 
           <div class="slide">
-            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20shirts." target="_blank">
+            <a href="https://wa.me/919560656584?text=I%20want%20bulk%20shirts." target="_blank">
               <img src="slider-shirt-white.png" />
             </a>
           </div>
 
           <div class="slide">
-            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20bulk%20shirts." target="_blank">
+            <a href="https://wa.me/919560656584?text=I%20want%20bulk%20shirts." target="_blank">
               <img src="slider-shirt-black.png" />
             </a>
           </div>
 
           <div class="slide">
-            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20winter%20jackets." target="_blank">
+            <a href="https://wa.me/919560656584?text=I%20want%20bulk%20jackets." target="_blank">
               <img src="jacket.png" />
             </a>
           </div>
 
           <div class="slide">
-            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20custom%20branding." target="_blank">
+            <a href="https://wa.me/919560656584?text=Hi%2C%20I%20want%20to%20discuss%20custom%20branding." target="_blank">
               <img src="slider-logo.png" />
             </a>
           </div>
 
-          <!-- DOTS -->
           <div class="slider-dots">
             <div class="slider-dot active" data-index="0"></div>
             <div class="slider-dot" data-index="1"></div>
@@ -280,28 +210,60 @@
 
         </div>
       </div>
-      <!-- SLIDER END -->
 
       <!-- PRODUCTS -->
-      <h2 id="products" class="section-title">Product Highlights</h2>
-      <p class="section-subtitle">Trackpants • T-Shirts • Jackets – Bulk ready stock</p>
+      <h2 id="products" style="text-align:center;margin-top:30px;">Product Highlights</h2>
 
       <div class="product-grid">
+
         <div class="product-card">
-          <img src="trackpant.jpg"
-               onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20trackpants.', '_blank')" />
+          <img src="trackpant.png" onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20trackpants.')">
           <h3>Trackpants</h3>
         </div>
 
         <div class="product-card">
-          <img src="tshirt.jpg"
-               onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20tshirts.', '_blank')" />
+          <img src="tshirt.png" onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20tshirts.')">
           <h3>T-Shirts</h3>
         </div>
 
         <div class="product-card">
-          <img src="jacket.jpg"
-               onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20jackets.', '_blank')" />
+          <img src="jacket.png" onclick="window.open('https://wa.me/919560656584?text=I%20want%20bulk%20jackets.')">
           <h3>Jackets</h3>
         </div>
-      </d
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>Jaiswal Enterprises • Mukundpur, New Delhi</div>
+      <div>WhatsApp: 9560656584</div>
+      <div>Instagram: @sales4wear</div>
+    </div>
+  </footer>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let dots = document.querySelectorAll(".slider-dot");
+let current = 0;
+
+function showSlide(i) {
+  slides[current].classList.remove("active");
+  dots[current].classList.remove("active");
+  current = (i + slides.length) % slides.length;
+  slides[current].classList.add("active");
+  dots[current].classList.add("active");
+}
+
+dots.forEach(d => {
+  d.onclick = () => showSlide(parseInt(d.dataset.index));
+});
+
+setInterval(() => showSlide(current + 1), 4000);
+</script>
+
+</body>
+</html>
