@@ -1,245 +1,723 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jaiswal Enterprises – Men's Sports & Casual Wear</title>
+  <meta charset="UTF-8">
+  <title>Sales4Wear - Jaiswal Enterprises</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f8f6f3;
-        color: #222;
+      background: radial-gradient(circle at top, #e0f2fe 0, #fdf2f8 30%, #f9fafb 60%, #eef2ff 100%);
+      color: #0f172a;
     }
 
-    /* HEADER */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER & NAVBAR */
     header {
-        background: #0e1a2a;
-        padding: 18px 30px;
-        color: #fff;
-        font-size: 22px;
-        font-weight: 700;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      background: linear-gradient(90deg, #0f172a, #1e293b, #0f172a);
+      color: #fff;
+      padding: 10px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.4);
     }
 
-    header a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-        margin-left: 20px;
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
 
-    /* SLIDER */
+    .logo {
+      font-weight: 800;
+      font-size: 1.08rem;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+    }
+
+    .logo span {
+      background: linear-gradient(90deg, #facc15, #fb923c, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.9rem;
+    }
+
+    nav ul li a {
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    nav ul li a:hover {
+      background: rgba(148, 163, 184, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .nav-social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+    }
+
+    .insta-btn {
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: 1px solid #fb7185;
+      font-size: 0.8rem;
+      background: radial-gradient(circle at top left, #f97316 0, #ec4899 50%, #22c55e 100%);
+      color: #0f172a;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.45);
+    }
+
+    /* HERO / SLIDER */
+    .hero {
+      max-width: 1200px;
+      margin: 16px auto 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 16px;
+      padding: 0 10px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .slider {
-        width: 100%;
-        height: 420px;
-        overflow: hidden;
-        position: relative;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #020617;
+      min-height: 230px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.3);
     }
 
-    .slides {
-        display: flex;
-        width: 600%;
-        height: 100%;
-        animation: slide 25s infinite;
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      cursor: pointer;
+      transition: transform 0.25s;
     }
 
-    .slides img {
-        width: 100%;
-        object-fit: cover;
+    .slider img.active {
+      display: block;
     }
 
-    @keyframes slide {
-        0% { margin-left: 0%; }
-        15% { margin-left: 0%; }
-
-        20% { margin-left: -100%; }
-        35% { margin-left: -100%; }
-
-        40% { margin-left: -200%; }
-        55% { margin-left: -200%; }
-
-        60% { margin-left: -300%; }
-        75% { margin-left: -300%; }
-
-        80% { margin-left: -400%; }
-        90% { margin-left: -400%; }
-
-        95% { margin-left: -500%; }
-        100% { margin-left: -500%; }
+    .slider img.active:hover {
+      transform: scale(1.03);
     }
 
-    /* ARROWS */
-    .arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0,0,0,0.4);
-        color: #fff;
-        padding: 10px 15px;
-        cursor: pointer;
-        font-size: 22px;
-        border-radius: 6px;
-        user-select: none;
+    .slider-badges {
+      position: absolute;
+      inset: 10px 10px auto 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
     }
 
-    .left-arrow { left: 10px; }
-    .right-arrow { right: 10px; }
-
-    /* Why Choose Us */
-    .why {
-        padding: 40px;
-        background: #ffffff;
-        text-align: center;
+    .badge {
+      background: linear-gradient(90deg, rgba(251, 191, 36, 0.95), rgba(248, 113, 113, 0.95));
+      color: #111827;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.5);
     }
 
-    .why h2 {
-        font-size: 26px;
-        margin-bottom: 10px;
+    .badge:nth-child(2) {
+      background: linear-gradient(90deg, rgba(52, 211, 153, 0.95), rgba(45, 212, 191, 0.95));
     }
 
-    .why p {
-        font-size: 18px;
-        line-height: 1.6;
-        max-width: 750px;
-        margin: auto;
-        color: #444;
+    .badge:nth-child(3) {
+      background: linear-gradient(90deg, rgba(96, 165, 250, 0.95), rgba(129, 140, 248, 0.95));
     }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+    }
+
+    .slider-dots button {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(248, 250, 252, 0.5);
+      cursor: pointer;
+      transition: width 0.2s, background 0.2s;
+    }
+
+    .slider-dots button.active {
+      width: 18px;
+      background: #f97316;
+    }
+
+    .hero-right {
+      border-radius: 20px;
+      padding: 15px 14px;
+      background: radial-gradient(circle at top left, #0f172a 0, #111827 40%, #020617 100%);
+      color: #f9fafb;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .hero-right h1 {
+      font-size: 1.25rem;
+    }
+
+    .hero-right p {
+      font-size: 0.86rem;
+      opacity: 0.95;
+    }
+
+    .hero-right .info-line {
+      font-size: 0.8rem;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: rgba(15, 23, 42, 0.85);
+      margin-top: 4px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .hero-right .cta-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      padding: 7px 15px;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.86rem;
+      cursor: pointer;
+      background: linear-gradient(90deg, #22c55e, #4ade80);
+      color: #052e16;
+      font-weight: 700;
+      box-shadow: 0 6px 16px rgba(22, 163, 74, 0.6);
+    }
+
+    .btn-outline {
+      padding: 7px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      font-size: 0.86rem;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.85);
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    /* SECTION WRAPPER */
+    section {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+      padding: 0 10px;
+    }
+
+    section h2 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 4px 10px rgba(148, 163, 184, 0.55);
+    }
+
+    /* WHY CHOOSE US */
+    .why-box {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      padding: 12px 11px;
+      box-shadow: 0 6px 18px rgba(148, 163, 184, 0.6);
+      font-size: 0.9rem;
+      line-height: 1.4;
+      border: 1px solid rgba(129, 140, 248, 0.4);
+      backdrop-filter: blur(6px);
+    }
+
+    .why-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 4px;
+      font-size: 0.85rem;
+      padding: 4px 6px;
+      border-radius: 999px;
+    }
+
+    .why-line:nth-child(1) { background: rgba(254, 243, 199, 0.9); }
+    .why-line:nth-child(2) { background: rgba(219, 234, 254, 0.9); }
+    .why-line:nth-child(3) { background: rgba(220, 252, 231, 0.9); }
+    .why-line:nth-child(4) { background: rgba(254, 226, 226, 0.9); }
+    .why-line:nth-child(5) { background: rgba(255, 237, 213, 0.9); }
+    .why-line:nth-child(6) { background: rgba(224, 242, 254, 0.9); }
+    .why-line:nth-child(7) { background: rgba(239, 246, 255, 0.9); }
+    .why-line:nth-child(8) { background: rgba(240, 249, 255, 0.9); }
+    .why-line:nth-child(9) { background: rgba(243, 232, 255, 0.9); }
+    .why-line:nth-child(10){ background: rgba(254, 249, 195, 0.9); }
 
     /* PRODUCT GRID */
-    .products {
-        padding: 40px 20px;
-        text-align: center;
-    }
-
-    .products h2 {
-        font-size: 28px;
-        margin-bottom: 25px;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 20px;
-        padding: 10px;
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
     }
 
     .product-card {
-        background: #fff;
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      overflow: hidden;
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 18px rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      backdrop-filter: blur(4px);
+      transition: transform 0.16s, box-shadow 0.16s;
     }
 
-    .product-card img {
-        width: 100%;
-        border-radius: 10px;
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.9);
     }
 
-    .product-name {
-        margin-top: 12px;
-        font-size: 18px;
-        font-weight: bold;
+    .product-image-wrapper {
+      position: relative;
+      max-height: 220px;
+      overflow: hidden;
+      cursor: pointer;
     }
 
-    /* FOOTER */
+    .product-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.23s;
+    }
+
+    .product-image-wrapper:hover img {
+      transform: scale(1.04);
+    }
+
+    .product-body {
+      padding: 9px 10px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .product-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .product-meta {
+      font-size: 0.78rem;
+      color: #4b5563;
+    }
+
+    .product-price {
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-top: 4px;
+      background: linear-gradient(90deg, #f97316, #ec4899, #6366f1);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .product-actions {
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .whatsapp-product-btn {
+      font-size: 0.78rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(90deg, #22c55e, #86efac);
+      color: #052e16;
+      font-weight: 700;
+      flex: 1;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.6);
+    }
+
+    .view-details {
+      font-size: 0.78rem;
+      text-decoration: underline;
+      color: #6b7280;
+      cursor: pointer;
+    }
+
+    /* CONTACT / FOOTER */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 5px 16px rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      backdrop-filter: blur(4px);
+    }
+
+    .contact-card p {
+      margin-bottom: 4px;
+    }
+
     footer {
-        padding: 20px;
-        text-align: center;
-        background: #0e1a2a;
-        color: #fff;
-        font-size: 16px;
-        margin-top: 40px;
+      margin-top: 12px;
+      padding: 10px 15px;
+      background: linear-gradient(90deg, #020617, #111827, #020617);
+      color: #e5e7eb;
+      font-size: 0.75rem;
+      box-shadow: 0 -6px 14px rgba(15, 23, 42, 0.7);
     }
-</style>
+
+    footer .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    /* FLOATING WHATSAPP BUTTON */
+    .floating-wa {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 200;
+    }
+
+    .floating-wa a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: radial-gradient(circle at top left, #22c55e 0, #4ade80 40%, #a7f3d0 100%);
+      color: #052e16;
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: 0 8px 22px rgba(22, 163, 74, 0.75);
+      border: 1px solid rgba(22, 101, 52, 0.55);
+    }
+
+    .floating-wa span.icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #052e16;
+      display: inline-block;
+      position: relative;
+    }
+
+    .floating-wa span.icon::before {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      border: 2px solid #052e16;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    JAISWAL ENTERPRISES
-    <div>
-        <a href="#products">Products</a>
-        <a href="https://wa.me/919560656584" target="_blank">WhatsApp</a>
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <div class="floating-wa">
+    <a href="https://wa.me/919560656584?text=Hi%2C%20I%20need%20bulk%20order%20from%20Jaiswal%20Enterprises."
+       target="_blank" rel="noopener">
+      <span class="icon"></span>
+      WhatsApp Order
+    </a>
+  </div>
+
+  <!-- HEADER / NAV - SINGLE PAGE LINKS -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        Sales4Wear <span>Jaiswal</span>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.instagram.com/sales4wear" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-social">
+        <a class="insta-btn" href="https://www.instagram.com/sales4wear" target="_blank" rel="noopener">
+          📸 sales4wear
+        </a>
+      </div>
     </div>
-</header>
+  </header>
 
-<!-- SLIDER -->
-<div class="slider">
-    <div class="slides">
-        <img src="slider-1-trackpants.png">
-        <img src="slider-2-shorts.png">
-        <img src="slider-3-shirts.png">
-        <img src="slider-4-tshirts.png">
-        <img src="slider-5-jackets.png">
-        <img src="slider-6-brand.png">
+  <!-- HERO + SLIDER -->
+  <main id="home">
+    <div class="hero">
+      <!-- SLIDER LEFT -->
+      <div class="slider" id="slider">
+        <!-- Yaha apni slider images ka path daalo -->
+        <img src="slider1.jpg" alt="Collection 1" class="active"
+             onclick="openWhatsAppFromImage('shirts')">
+        <img src="slider2.jpg" alt="Collection 2"
+             onclick="openWhatsAppFromImage('shirts')">
+        <img src="slider3.jpg" alt="Collection 3"
+             onclick="openWhatsAppFromImage('shirts')">
+
+        <div class="slider-badges">
+          <span class="badge">🔥 New Winter Collection</span>
+          <span class="badge">👕 Premium Fabric</span>
+          <span class="badge">🚚 PAN India · COD*</span>
+        </div>
+
+        <div class="slider-dots" id="sliderDots">
+          <button class="active" data-index="0"></button>
+          <button data-index="1"></button>
+          <button data-index="2"></button>
+        </div>
+      </div>
+
+      <!-- HERO RIGHT INFO -->
+      <aside class="hero-right">
+        <div>
+          <h1>Sales4Wear – Jaiswal Enterprises</h1>
+          <p>
+            Men’s wear · Trackpants · Shirts · Winter wear. Direct manufacturer & supplier.
+            Retail + Wholesale dono available – New Delhi se PAN India supply.
+          </p>
+
+          <div class="info-line">🧾 GST: <strong>07CLMPJ4994D1ZQ</strong></div>
+          <div class="info-line">📞 Call/WhatsApp: <strong>+91 95606 56584</strong></div>
+          <div class="info-line">✉️ Email: <strong>sales4wearindia@gmail.com</strong></div>
+        </div>
+
+        <div class="cta-row">
+          <a href="https://wa.me/919560656584?text=Hi%2C%20I%20need%20bulk%20catalog%20for%20trackpants%20and%20shirts%20from%20Jaiswal%20Enterprises."
+             target="_blank" rel="noopener">
+            <button class="btn-primary">📲 WhatsApp Catalog</button>
+          </a>
+
+          <a href="https://www.instagram.com/sales4wear" target="_blank" rel="noopener">
+            <button class="btn-outline">📸 View Instagram</button>
+          </a>
+        </div>
+      </aside>
     </div>
 
-    <div class="arrow left-arrow" onclick="plusSlides(-1)">❮</div>
-    <div class="arrow right-arrow" onclick="plusSlides(1)">❯</div>
-</div>
+    <!-- WHY CHOOSE US - LINE TO LINE EMOJI -->
+    <section id="why">
+      <h2>✨ Why Choose Us</h2>
+      <div class="why-box">
+        <div class="why-line">🧵 Premium fabric – soft & comfortable, long lasting quality</div>
+        <div class="why-line">📏 Trendy fitting – market ke hisaab se modern fit</div>
+        <div class="why-line">✅ Har piece QC checked – defective maal avoid</div>
+        <div class="why-line">🏭 Direct manufacturer – beech ka margin save</div>
+        <div class="why-line">🛍️ Retail + wholesale dono option available</div>
+        <div class="why-line">🚚 PAN India courier – door step delivery</div>
+        <div class="why-line">💵 COD available – 10% advance ke saath*</div>
+        <div class="why-line">📦 Har parcel ke saath proper packing & tracking ID</div>
+        <div class="why-line">⚡ Fast WhatsApp reply – rate, size, colour sab clear</div>
+        <div class="why-line">🤝 Long term dealing ke liye supportive behaviour</div>
+      </div>
+    </section>
 
-<script>
-let index = 0;
-const slides = document.querySelector('.slides');
-function plusSlides(step){
-    index += step;
-    if(index < 0) index = 5;
-    if(index > 5) index = 0;
-    slides.style.marginLeft = "-" + (index * 100) + "%";
-}
-</script>
-
-<!-- WHY CHOOSE US -->
-<div class="why">
-    <h2>Why Choose Jaiswal Enterprises?</h2>
-    <p>
-        Delhi-based wholesale supplier with premium quality <b>sportswear & casual wear</b>.  
-        We deal in: Dobby Lycra Trackpants, NS Lycra Trackpants, 4-Way Lycra Trackpants,  
-        Taiwan Lycra Trackpants, Karara Lycra Trackpants, Cotton Shirts,  
-        Premium Party Shirts, Shorts (all fabrics), T-Shirts, Formal Pants,  
-        Office Wear Shirts & much more.  
-        <br><br>
-        🔥 **Bulk mein best rate – not sasta, BEST quality!**  
-        Daily new designs available on WhatsApp.
-    </p>
-</div>
-
-<!-- PRODUCTS -->
-<div id="products" class="products">
-    <h2>Our Products</h2>
-
-    <div class="grid">
-
+    <!-- PRODUCTS -->
+    <section id="products">
+      <h2>🛍️ Our Products</h2>
+      <div class="product-grid">
+        <!-- PRODUCT 1 -->
         <div class="product-card">
-            <img src="product-trackpants.png">
-            <div class="product-name">Trackpants Collection</div>
+          <div class="product-image-wrapper"
+               onclick="openWhatsAppFromImage('NS Terry Upper Set')">
+            <img src="product1.jpg" alt="NS Terry Upper">
+          </div>
+          <div class="product-body">
+            <div class="product-title">NS Terry Upper</div>
+            <div class="product-meta">
+              Inside China fur · Size L–2XL · Fully embroidery logo · 4 colours · 12 set
+            </div>
+            <div class="product-price">₹370 / piece</div>
+            <div class="product-actions">
+              <button class="whatsapp-product-btn"
+                      onclick="openWhatsAppFromImage('NS Terry Upper Set'); event.stopPropagation();">
+                💬 Order on WhatsApp
+              </button>
+              <span class="view-details">View details</span>
+            </div>
+          </div>
         </div>
 
+        <!-- PRODUCT 2 -->
         <div class="product-card">
-            <img src="product-shorts.png">
-            <div class="product-name">Shorts – All Fabrics</div>
+          <div class="product-image-wrapper"
+               onclick="openWhatsAppFromImage('Air Jet Fleece')">
+            <img src="product2.jpg" alt="Air jet fleece">
+          </div>
+          <div class="product-body">
+            <div class="product-title">Air Jet Fleece</div>
+            <div class="product-meta">
+              350 GSM · Size M/L/XL · Red, Black, White · Premium winter segment
+            </div>
+            <div class="product-price">₹345 / piece</div>
+            <div class="product-actions">
+              <button class="whatsapp-product-btn"
+                      onclick="openWhatsAppFromImage('Air Jet Fleece'); event.stopPropagation();">
+                💬 Order on WhatsApp
+              </button>
+              <span class="view-details">View details</span>
+            </div>
+          </div>
         </div>
 
-        <div class="product-card">
-            <img src="product-shirts.png">
-            <div class="product-name">Shirts – Cotton / Party Wear</div>
+        <!-- Aur products ke liye same card copy karke naam, detail, price change kar dena -->
+      </div>
+    </section>
+
+    <!-- CONTACT / BUSINESS DETAILS -->
+    <section id="contact">
+      <h2>📍 Contact & Business Details</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <p><strong>Business Name:</strong> Sales4Wear - Jaiswal Enterprises</p>
+          <p><strong>GST:</strong> 07CLMPJ4994D1ZQ</p>
+          <p><strong>Mobile / WhatsApp:</strong> +91 95606 56584</p>
+          <p><strong>Email:</strong> sales4wearindia@gmail.com</p>
         </div>
 
-        <div class="product-card">
-            <img src="product-tshirts.png">
-            <div class="product-name">T-Shirts – Casual & Sports</div>
+        <div class="contact-card">
+          <p><strong>Address:</strong></p>
+          <p>
+            Shop No. ___, Street Name,<br>
+            Area, New Delhi – 1100xx, India
+          </p>
+          <p>📍 Google Map link yaha daal sakte ho.</p>
         </div>
 
+        <div class="contact-card">
+          <p><strong>Online Presence:</strong></p>
+          <p>📸 Instagram:
+            <a href="https://www.instagram.com/sales4wear" target="_blank" rel="noopener">
+              @sales4wear
+            </a>
+          </p>
+          <p>💬 WhatsApp: Direct order button bottom-right</p>
+          <p>🔁 Retail & Wholesale both available</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Sales4Wear - Jaiswal Enterprises · All Rights Reserved.</div>
+      <div>COD available with 10% advance · PAN India courier</div>
     </div>
-</div>
+  </footer>
 
-<footer>
-    © 2025 Jaiswal Enterprises • Men's Sportswear & Casual Wear  
-    <br>Contact: 9560656584 • Delhi, India
-</footer>
+  <script>
+    // YEAR
+    document.getElementById("year").textContent = new Date().getFullYear();
 
+    // SIMPLE SLIDER
+    const sliderImages = document.querySelectorAll("#slider img");
+    const sliderDots = document.querySelectorAll("#sliderDots button");
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      sliderImages.forEach((img, i) => {
+        img.classList.toggle("active", i === index);
+      });
+      sliderDots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+      currentSlide = index;
+    }
+
+    sliderDots.forEach(dot => {
+      dot.addEventListener("click", () => {
+        const index = parseInt(dot.dataset.index, 10);
+        showSlide(index);
+      });
+    });
+
+    setInterval(() => {
+      const next = (currentSlide + 1) % sliderImages.length;
+      showSlide(next);
+    }, 4000);
+
+    // IMAGE / BUTTON CLICK -> DIRECT WHATSAPP WITH BULK MESSAGE
+    function openWhatsAppFromImage(contextText) {
+      const base = "https://wa.me/919560656584";
+      // message: "Hi, I need bulk {contextText} from Jaiswal Enterprises."
+      const text = encodeURIComponent(
+        `Hi, I need bulk ${contextText} from Jaiswal Enterprises.`
+      );
+      const url = base + "?text=" + text;
+      window.open(url, "_blank");
+    }
+  </script>
 </body>
 </html>
