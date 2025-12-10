@@ -75,16 +75,16 @@
     .hero-banner{
       background:linear-gradient(135deg,#0f172a,#1d4ed8,#22c55e);
       border-radius:26px;
-      padding:24px;
+      padding:26px;
       box-shadow:0 12px 32px rgba(0,0,0,.5);
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      min-height:270px;
       cursor:pointer;
+      min-height:260px;
     }
 
-    /* ⭐ FINAL UPDATED LOGO – NO BORDER, NO PADDING, FULL CLEAN */
+    /* ⭐ MEDIUM SIZE CLEAN LOGO */
     .hero-logo-box{
       flex:1;
       display:flex;
@@ -93,14 +93,15 @@
     }
     .hero-logo-box img{
       width:100%;
-      max-width:480px;     /* big size */
+      max-width:350px;   /* PERFECT MEDIUM SIZE */
       height:auto;
       object-fit:contain;
-      background:none;     /* remove white frame */
+
+      background:none; 
       padding:0;
       margin:0;
       border-radius:0;
-      box-shadow:none;     /* no shadow */
+      box-shadow:none;
     }
 
     .hero-banner-text{
@@ -111,18 +112,18 @@
     }
     .hero-banner-text strong{color:#fef3c7;}
 
+    /* RIGHT BOX */
     .right-box{
       background:#020617;
       color:#f9fafb;
       border-radius:26px;
       padding:20px;
       box-shadow:0 12px 32px rgba(0,0,0,.6);
-      min-height:270px;
     }
 
     .right-box h1{
       font-size:1.3rem;
-      margin-bottom:6px;
+      margin-bottom:8px;
     }
     .right-box p{
       font-size:.9rem;
@@ -132,7 +133,7 @@
 
     .info-line{
       background:rgba(255,255,255,0.07);
-      padding:8px 12px;
+      padding:9px 12px;
       border-radius:12px;
       border:1px solid rgba(148,163,184,.5);
       margin:5px 0;
@@ -163,7 +164,7 @@
       cursor:pointer;
     }
 
-    /* SECTION HEADING */
+    /* SECTION */
     section{
       max-width:1200px;
       margin:20px auto;
@@ -179,7 +180,7 @@
       font-size:1rem;
     }
 
-    /* WHY CHOOSE */
+    /* WHY CHOOSE US */
     .why-box{
       background:linear-gradient(135deg,#eef2ff,#fef3c7);
       border-radius:20px;
@@ -236,7 +237,7 @@
       font-weight:700;
     }
 
-    /* CONTACT SECTION */
+    /* CONTACT */
     .contact-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -288,7 +289,7 @@
 </head>
 <body>
 
-<!-- FLOATING WA -->
+<!-- FLOAT WHATSAPP -->
 <a class="wa-float" href="https://wa.me/919560656584?text=Hi%2C%20I%20need%20bulk%20order%20from%20Jaiswal%20Enterprises" target="_blank">
   WhatsApp Order
 </a>
@@ -308,10 +309,10 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <div class="hero" id="home">
-  
-  <!-- LEFT BANNER WITH CLEAN BIG LOGO -->
+
+  <!-- LEFT BANNER -->
   <div class="hero-banner" onclick="bulk('clothing')">
     <div class="hero-logo-box">
       <img src="slider-logo.png" alt="Jaiswal Enterprises Logo">
@@ -323,7 +324,7 @@
     </div>
   </div>
 
-  <!-- RIGHT INFO CARD -->
+  <!-- RIGHT INFO BOX -->
   <div class="right-box">
     <div>
       <h1>Jaiswal Enterprises</h1>
@@ -346,7 +347,7 @@
 </div>
 
 
-<!-- WHY CHOOSE US -->
+<!-- WHY CHOOSE -->
 <section id="why">
   <h2>Why Choose Us</h2>
   <div class="why-box">
