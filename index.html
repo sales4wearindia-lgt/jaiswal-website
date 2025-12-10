@@ -119,21 +119,43 @@
       border: 1px solid rgba(148, 163, 184, 0.3);
     }
 
-    .slider img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .slide-box {
+      position: absolute;
+      inset: 0;
       display: none;
+      padding: 14px;
       cursor: pointer;
-      transition: transform 0.25s;
     }
 
-    .slider img.active {
-      display: block;
+    .slide-box.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #f9fafb;
     }
 
-    .slider img.active:hover {
-      transform: scale(1.03);
+    .slide-1 {
+      background: linear-gradient(135deg, #111827 0, #1d4ed8 40%, #22c55e 100%);
+    }
+
+    .slide-2 {
+      background: linear-gradient(135deg, #020617 0, #f97316 40%, #ec4899 100%);
+    }
+
+    .slide-3 {
+      background: linear-gradient(135deg, #0b1120 0, #6366f1 40%, #a855f7 100%);
+    }
+
+    .slide-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .slide-sub {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-bottom: 16px;
     }
 
     .slider-badges {
@@ -324,23 +346,25 @@
       box-shadow: 0 10px 24px rgba(148, 163, 184, 0.9);
     }
 
-    .product-image-wrapper {
-      position: relative;
-      max-height: 220px;
-      overflow: hidden;
+    .fake-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #f9fafb;
+      text-align: center;
+      padding: 0 8px;
       cursor: pointer;
     }
 
-    .product-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.23s;
+    .fake-img-1 {
+      background: linear-gradient(135deg, #0f172a 0, #1d4ed8 40%, #22c55e 100%);
     }
 
-    .product-image-wrapper:hover img {
-      transform: scale(1.04);
+    .fake-img-2 {
+      background: linear-gradient(135deg, #7c2d12 0, #f97316 40%, #fed7aa 100%);
     }
 
     .product-body {
@@ -516,20 +540,27 @@
   <!-- HERO + SLIDER -->
   <main id="home">
     <div class="hero">
-      <!-- SLIDER LEFT -->
+      <!-- SLIDER LEFT (CODE SE BANAI GAYI "IMAGES") -->
       <div class="slider" id="slider">
-        <!-- Yaha apni slider images ka path daalo -->
-        <img src="slider1.jpg" alt="Collection 1" class="active"
-             onclick="openWhatsAppFromImage('shirts')">
-        <img src="slider2.jpg" alt="Collection 2"
-             onclick="openWhatsAppFromImage('shirts')">
-        <img src="slider3.jpg" alt="Collection 3"
-             onclick="openWhatsAppFromImage('shirts')">
-
         <div class="slider-badges">
           <span class="badge">🔥 New Winter Collection</span>
           <span class="badge">👕 Premium Fabric</span>
           <span class="badge">🚚 PAN India · COD*</span>
+        </div>
+
+        <div class="slide-box slide-1 active" onclick="openWhatsAppBulk('shirts')">
+          <div class="slide-title">Winter Shirts Collection</div>
+          <div class="slide-sub">Bulk premium shirts for your store – direct from Jaiswal Enterprises.</div>
+        </div>
+
+        <div class="slide-box slide-2" onclick="openWhatsAppBulk('trackpants')">
+          <div class="slide-title">Bulk Trackpants</div>
+          <div class="slide-sub">Trending trackpants, great margins, all India supply.</div>
+        </div>
+
+        <div class="slide-box slide-3" onclick="openWhatsAppBulk('shirts and trackpants')">
+          <div class="slide-title">Retail + Wholesale</div>
+          <div class="slide-sub">Support for shop owners, resellers & bulk buyers.</div>
         </div>
 
         <div class="slider-dots" id="sliderDots">
@@ -566,7 +597,7 @@
       </aside>
     </div>
 
-    <!-- WHY CHOOSE US - LINE TO LINE EMOJI -->
+    <!-- WHY CHOOSE US -->
     <section id="why">
       <h2>✨ Why Choose Us</h2>
       <div class="why-box">
@@ -589,9 +620,9 @@
       <div class="product-grid">
         <!-- PRODUCT 1 -->
         <div class="product-card">
-          <div class="product-image-wrapper"
-               onclick="openWhatsAppFromImage('NS Terry Upper Set')">
-            <img src="product1.jpg" alt="NS Terry Upper">
+          <div class="fake-img fake-img-1"
+               onclick="openWhatsAppBulk('NS Terry Upper Set')">
+            NS Terry Upper (Code Image)
           </div>
           <div class="product-body">
             <div class="product-title">NS Terry Upper</div>
@@ -601,7 +632,7 @@
             <div class="product-price">₹370 / piece</div>
             <div class="product-actions">
               <button class="whatsapp-product-btn"
-                      onclick="openWhatsAppFromImage('NS Terry Upper Set'); event.stopPropagation();">
+                      onclick="openWhatsAppBulk('NS Terry Upper Set'); event.stopPropagation();">
                 💬 Order on WhatsApp
               </button>
               <span class="view-details">View details</span>
@@ -611,9 +642,9 @@
 
         <!-- PRODUCT 2 -->
         <div class="product-card">
-          <div class="product-image-wrapper"
-               onclick="openWhatsAppFromImage('Air Jet Fleece')">
-            <img src="product2.jpg" alt="Air jet fleece">
+          <div class="fake-img fake-img-2"
+               onclick="openWhatsAppBulk('Air Jet Fleece')">
+            Air Jet Fleece (Code Image)
           </div>
           <div class="product-body">
             <div class="product-title">Air Jet Fleece</div>
@@ -623,7 +654,7 @@
             <div class="product-price">₹345 / piece</div>
             <div class="product-actions">
               <button class="whatsapp-product-btn"
-                      onclick="openWhatsAppFromImage('Air Jet Fleece'); event.stopPropagation();">
+                      onclick="openWhatsAppBulk('Air Jet Fleece'); event.stopPropagation();">
                 💬 Order on WhatsApp
               </button>
               <span class="view-details">View details</span>
@@ -631,7 +662,7 @@
           </div>
         </div>
 
-        <!-- Aur products ke liye same card copy karke naam, detail, price change kar dena -->
+        <!-- Aur products ke liye yahi card copy karke naam change kar sakte ho -->
       </div>
     </section>
 
@@ -681,22 +712,22 @@
     // YEAR
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // SIMPLE SLIDER
-    const sliderImages = document.querySelectorAll("#slider img");
-    const sliderDots = document.querySelectorAll("#sliderDots button");
+    // SLIDER (CODE-BASED SLIDES)
+    const slides = document.querySelectorAll(".slide-box");
+    const dots = document.querySelectorAll("#sliderDots button");
     let currentSlide = 0;
 
     function showSlide(index) {
-      sliderImages.forEach((img, i) => {
-        img.classList.toggle("active", i === index);
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
       });
-      sliderDots.forEach((dot, i) => {
+      dots.forEach((dot, i) => {
         dot.classList.toggle("active", i === index);
       });
       currentSlide = index;
     }
 
-    sliderDots.forEach(dot => {
+    dots.forEach(dot => {
       dot.addEventListener("click", () => {
         const index = parseInt(dot.dataset.index, 10);
         showSlide(index);
@@ -704,16 +735,15 @@
     });
 
     setInterval(() => {
-      const next = (currentSlide + 1) % sliderImages.length;
+      const next = (currentSlide + 1) % slides.length;
       showSlide(next);
     }, 4000);
 
-    // IMAGE / BUTTON CLICK -> DIRECT WHATSAPP WITH BULK MESSAGE
-    function openWhatsAppFromImage(contextText) {
+    // WHATSAPP BULK MESSAGE
+    function openWhatsAppBulk(textPart) {
       const base = "https://wa.me/919560656584";
-      // message: "Hi, I need bulk {contextText} from Jaiswal Enterprises."
       const text = encodeURIComponent(
-        `Hi, I need bulk ${contextText} from Jaiswal Enterprises.`
+        `Hi, I need bulk ${textPart} from Jaiswal Enterprises.`
       );
       const url = base + "?text=" + text;
       window.open(url, "_blank");
