@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;}
+    * { margin:0; padding:0; box-sizing:border-box; font-family:system-ui, -apple-system, "Segoe UI"; }
 
     body{
       background: radial-gradient(circle at top, #e0f2fe 0, #fdf2f8 30%, #f9fafb 60%, #eef2ff 100%);
@@ -34,8 +34,9 @@
     }
     .logo-text{
       font-weight:800;
-      font-size:1.1rem;
+      font-size:1.15rem;
       text-transform:uppercase;
+      letter-spacing:1px;
     }
     .logo-text span{
       background:linear-gradient(90deg,#facc15,#fb923c,#f97316);
@@ -45,7 +46,7 @@
     nav ul{
       list-style:none;
       display:flex;
-      gap:16px;
+      gap:18px;
       font-size:.9rem;
     }
     nav ul li a{
@@ -60,11 +61,11 @@
     /* HERO */
     .hero{
       max-width:1200px;
-      margin:18px auto 20px;
+      margin:20px auto;
       padding:0 12px;
       display:grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
-      gap:18px;
+      grid-template-columns: minmax(0,1.4fr) minmax(0,1.3fr);
+      gap:20px;
       align-items:stretch;
     }
     @media(max-width:800px){
@@ -74,14 +75,16 @@
     .hero-banner{
       background:linear-gradient(135deg,#0f172a,#1d4ed8,#22c55e);
       border-radius:26px;
-      padding:20px;
+      padding:24px;
       box-shadow:0 12px 32px rgba(0,0,0,.5);
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      min-height:260px;
+      min-height:270px;
       cursor:pointer;
     }
+
+    /* ⭐ BIG LOGO UPDATED */
     .hero-logo-box{
       flex:1;
       display:flex;
@@ -89,20 +92,22 @@
       justify-content:center;
     }
     .hero-logo-box img{
-      max-width:260px;
-      width:70%;
-      max-height:160px;
+      max-width:380px;         /* Bigger width */
+      width:85%;               /* Bigger scaling */
+      max-height:220px;        /* Bigger height */
       object-fit:contain;
-      border-radius:18px;
+      border-radius:20px;
       background:#fff;
-      padding:10px 14px;
-      box-shadow:0 10px 26px rgba(0,0,0,.45);
+      padding:14px 20px;
+      box-shadow:0 12px 28px rgba(0,0,0,.45);
     }
+
     .hero-banner-text{
-      margin-top:14px;
+      margin-top:18px;
       text-align:center;
-      font-size:.9rem;
+      font-size:.92rem;
       color:#e5e7eb;
+      font-weight:500;
     }
     .hero-banner-text strong{color:#fef3c7;}
 
@@ -110,212 +115,181 @@
       background:#020617;
       color:#f9fafb;
       border-radius:26px;
-      padding:18px 18px 20px;
+      padding:20px;
       box-shadow:0 12px 32px rgba(0,0,0,.6);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:260px;
+      min-height:270px;
     }
+
     .right-box h1{
-      font-size:1.25rem;
+      font-size:1.3rem;
       margin-bottom:6px;
     }
     .right-box p{
       font-size:.9rem;
       opacity:.95;
-      margin-bottom:8px;
+      margin-bottom:10px;
     }
+
     .info-line{
-      background:rgba(15,23,42,.9);
-      border:1px solid rgba(148,163,184,.6);
-      padding:7px 12px;
+      background:rgba(255,255,255,0.07);
+      padding:8px 12px;
       border-radius:12px;
+      border:1px solid rgba(148,163,184,.5);
+      margin:5px 0;
       font-size:.85rem;
-      margin:4px 0;
     }
+
     .cta-row{
-      margin-top:10px;
+      margin-top:12px;
       display:flex;
+      gap:10px;
       flex-wrap:wrap;
-      gap:8px;
     }
     .btn-primary{
-      padding:8px 14px;
-      border-radius:999px;
-      border:none;
-      font-size:.85rem;
-      font-weight:700;
+      padding:9px 16px;
       background:linear-gradient(90deg,#22c55e,#4ade80);
+      border:none;
       color:#052e16;
+      border-radius:999px;
+      font-weight:700;
       cursor:pointer;
     }
     .btn-outline{
-      padding:8px 14px;
+      padding:9px 16px;
       border-radius:999px;
       border:1px solid #94a3b8;
-      font-size:.85rem;
       background:transparent;
-      color:#e5e7eb;
+      color:#fff;
       cursor:pointer;
     }
 
-    /* SECTION BASE */
+    /* SECTION HEADING */
     section{
       max-width:1200px;
-      margin:18px auto;
+      margin:20px auto;
       padding:0 12px;
     }
     section h2{
-      background:#ffffff;
+      background:#fff;
       padding:7px 18px;
       border-radius:999px;
-      font-size:1rem;
-      margin-bottom:12px;
-      box-shadow:0 4px 12px rgba(0,0,0,.12);
       display:inline-block;
+      box-shadow:0 4px 12px rgba(0,0,0,.12);
+      margin-bottom:14px;
+      font-size:1rem;
     }
 
-    /* WHY CHOOSE US – better colours */
+    /* WHY CHOOSE US */
     .why-box{
       background:linear-gradient(135deg,#eef2ff,#fef3c7);
       border-radius:20px;
-      padding:12px 12px 10px;
-      box-shadow:0 8px 22px rgba(148,163,184,.7);
+      padding:14px;
+      box-shadow:0 6px 18px rgba(148,163,184,.6);
     }
     .why-line{
       display:flex;
       align-items:center;
       gap:8px;
-      margin:5px 0;
-      padding:7px 10px;
+      padding:8px 12px;
       border-radius:999px;
-      font-size:.9rem;
       background:#ffffffd9;
+      margin:6px 0;
+      font-size:.9rem;
     }
-    .why-icon{
-      width:20px;
-      height:20px;
-      border-radius:999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:.8rem;
-    }
-    .why1 .why-icon{background:#fee2e2;}
-    .why2 .why-icon{background:#dbeafe;}
-    .why3 .why-icon{background:#dcfce7;}
-    .why4 .why-icon{background:#fef9c3;}
-    .why5 .why-icon{background:#e0f2fe;}
-    .why6 .why-icon{background:#f1f5f9;}
-    .why7 .why-icon{background:#fae8ff;}
-    .why8 .why-icon{background:#ffedd5;}
-    .why9 .why-icon{background:#e0e7ff;}
-    .why10 .why-icon{background:#fef3c7;}
 
     /* PRODUCTS */
     .product-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:14px;
     }
     .product-card{
-      background:#ffffff;
+      background:#fff;
       border-radius:18px;
-      padding:12px;
-      box-shadow:0 6px 20px rgba(148,163,184,.8);
-      border:1px solid rgba(226,232,240,.9);
+      padding:14px;
+      box-shadow:0 6px 20px rgba(148,163,184,.7);
     }
     .product-title{
       font-size:1rem;
       font-weight:700;
-      margin-bottom:4px;
     }
     .product-meta{
-      font-size:.86rem;
-      opacity:.9;
-      margin-bottom:6px;
+      font-size:.85rem;
+      opacity:.85;
+      margin:6px 0;
     }
     .dm-price{
-      font-size:.9rem;
-      font-weight:800;
       background:linear-gradient(90deg,#fb923c,#ec4899,#6366f1);
       -webkit-background-clip:text;
       color:transparent;
+      font-weight:800;
       margin-bottom:8px;
     }
     .wa-btn{
       width:100%;
-      padding:8px;
+      padding:9px;
       border-radius:999px;
+      background:linear-gradient(90deg,#22c55e,#86efac);
       border:none;
-      cursor:pointer;
-      font-size:.86rem;
-      font-weight:700;
-      background:linear-gradient(90deg,#22c55e,#4ade80);
       color:#052e16;
+      cursor:pointer;
+      font-weight:700;
     }
 
-    /* CONTACT – bigger & clearer */
+    /* CONTACT SECTION */
     .contact-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:14px;
     }
     .contact-box{
-      background:#ffffff;
+      background:#fff;
       border-radius:18px;
       padding:14px;
-      box-shadow:0 8px 22px rgba(148,163,184,.9);
-      border:1px solid rgba(209,213,219,.9);
-      font-size:.95rem;
+      box-shadow:0 8px 20px rgba(148,163,184,.9);
     }
     .contact-box p{
       margin-bottom:6px;
-    }
-    .contact-box strong{
-      font-weight:700;
+      font-size:.95rem;
     }
 
-    /* FLOAT WA */
+    /* FLOATING WA BUTTON */
     .wa-float{
       position:fixed;
       right:16px;
       bottom:16px;
+      background:linear-gradient(90deg,#22c55e,#4ade80);
       padding:10px 18px;
       border-radius:999px;
-      background:linear-gradient(90deg,#22c55e,#4ade80);
-      color:#052e16;
-      font-size:.85rem;
       font-weight:700;
+      font-size:.85rem;
+      color:#052e16;
       box-shadow:0 10px 26px rgba(0,0,0,.45);
       z-index:999;
     }
 
-    /* FOOTER with all rights */
+    /* FOOTER */
     footer{
-      margin-top:10px;
       background:#020617;
+      padding:12px 16px;
       color:#9ca3af;
-      font-size:.78rem;
-      padding:10px 16px;
+      font-size:.8rem;
+      margin-top:10px;
     }
     .footer-inner{
       max-width:1200px;
       margin:0 auto;
       display:flex;
-      flex-wrap:wrap;
       justify-content:space-between;
+      flex-wrap:wrap;
       gap:8px;
     }
   </style>
 </head>
 <body>
 
-<!-- FLOATING WHATSAPP -->
-<a class="wa-float"
-   href="https://wa.me/919560656584?text=Hi%2C%20I%20need%20bulk%20order%20from%20Jaiswal%20Enterprises"
-   target="_blank">
+<!-- FLOATING WA -->
+<a class="wa-float" href="https://wa.me/919560656584?text=Hi%2C%20I%20need%20bulk%20order%20from%20Jaiswal%20Enterprises" target="_blank">
   WhatsApp Order
 </a>
 
@@ -336,21 +310,25 @@
 
 <!-- HERO -->
 <div class="hero" id="home">
+  
+  <!-- LEFT BANNER WITH BIG LOGO -->
   <div class="hero-banner" onclick="bulk('clothing')">
     <div class="hero-logo-box">
-      <!-- yahan tumhara logo file: slider-logo.png (same folder) -->
       <img src="slider-logo.png" alt="Jaiswal Enterprises Logo">
     </div>
+
     <div class="hero-banner-text">
-      <strong>Bulk Orders Available</strong> – Trackpants, shirts, T-shirts & winter wear.
-      Direct dealing with Jaiswal Enterprises, Mukundpur, New Delhi – PAN India supply.
+      <strong>Bulk Orders Available</strong> – Trackpants, shirts, T-shirts & winter wear.  
+      Jaiswal Enterprises, Mukundpur, New Delhi – PAN India supply.
     </div>
   </div>
 
+  <!-- RIGHT INFO CARD -->
   <div class="right-box">
     <div>
       <h1>Jaiswal Enterprises</h1>
-      <p>Manufacturer & supplier of men's wear – trackpants, shirts & winter wear from Mukundpur, New Delhi.</p>
+      <p>Manufacturer & supplier of men's wear – trackpants, shirts & winter wear.</p>
+
       <div class="info-line">🧾 GST: 07CLMPJ4994D1ZQ</div>
       <div class="info-line">📞 WhatsApp: +91 95606 56584</div>
       <div class="info-line">📧 Email: sales4wearindia@gmail.com</div>
@@ -364,42 +342,23 @@
       </a>
     </div>
   </div>
+
 </div>
 
-<!-- WHY CHOOSE US -->
+<!-- WHY CHOOSE -->
 <section id="why">
   <h2>Why Choose Us</h2>
   <div class="why-box">
-    <div class="why-line why1">
-      <div class="why-icon">🧵</div> Premium fabric – soft & long lasting
-    </div>
-    <div class="why-line why2">
-      <div class="why-icon">📏</div> Trendy fitting – market ke hisaab se modern
-    </div>
-    <div class="why-line why3">
-      <div class="why-icon">✅</div> QC checked stock – defective maal avoid
-    </div>
-    <div class="why-line why4">
-      <div class="why-icon">🏭</div> Direct manufacturer – beech ka margin save
-    </div>
-    <div class="why-line why5">
-      <div class="why-icon">🛍️</div> Retail + wholesale dono option
-    </div>
-    <div class="why-line why6">
-      <div class="why-icon">🚚</div> PAN India delivery – proper courier
-    </div>
-    <div class="why-line why7">
-      <div class="why-icon">💵</div> COD available (10% advance ke saath)
-    </div>
-    <div class="why-line why8">
-      <div class="why-icon">📦</div> Har parcel ke saath proper packing & tracking ID
-    </div>
-    <div class="why-line why9">
-      <div class="why-icon">⚡</div> Fast WhatsApp reply – rate, size, colour clear
-    </div>
-    <div class="why-line why10">
-      <div class="why-icon">🤝</div> Long term dealing ke liye supportive behaviour
-    </div>
+    <div class="why-line">🧵 Premium fabric – soft & long lasting</div>
+    <div class="why-line">📏 Trendy fitting – modern look</div>
+    <div class="why-line">✅ QC checked stock – no defective items</div>
+    <div class="why-line">🏭 Direct manufacturer – margin save</div>
+    <div class="why-line">🛍️ Retail + wholesale options</div>
+    <div class="why-line">🚚 PAN India delivery</div>
+    <div class="why-line">💵 COD available (10% advance)</div>
+    <div class="why-line">📦 Proper packing & tracking ID</div>
+    <div class="why-line">⚡ Fast WhatsApp reply</div>
+    <div class="why-line">🤝 Long-term business support</div>
   </div>
 </section>
 
@@ -407,16 +366,17 @@
 <section id="products">
   <h2>Our Products</h2>
   <div class="product-grid">
+
     <div class="product-card">
       <div class="product-title">NS Terry Upper</div>
-      <div class="product-meta">Inside China fur · Size L–2XL · 4 colours</div>
+      <div class="product-meta">Inside China fur · L–2XL · 4 colours</div>
       <div class="dm-price">DM for Price</div>
       <button class="wa-btn" onclick="bulk('NS Terry Upper')">Order on WhatsApp</button>
     </div>
 
     <div class="product-card">
       <div class="product-title">Air Jet Fleece</div>
-      <div class="product-meta">350 GSM · Size M–XL · Premium winter segment</div>
+      <div class="product-meta">350 GSM · M–XL · Winter segment</div>
       <div class="dm-price">DM for Price</div>
       <button class="wa-btn" onclick="bulk('Air Jet Fleece')">Order on WhatsApp</button>
     </div>
@@ -430,28 +390,33 @@
 
     <div class="product-card">
       <div class="product-title">Casual Shirts</div>
-      <div class="product-meta">Cotton · Size M–XL · 4 patterns</div>
+      <div class="product-meta">Cotton · M–XL · Regular fit</div>
       <div class="dm-price">DM for Price</div>
       <button class="wa-btn" onclick="bulk('Casual Shirts')">Order on WhatsApp</button>
     </div>
+
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
   <h2>Contact & Business Details</h2>
+
   <div class="contact-grid">
+
     <div class="contact-box">
       <p><strong>Business Name:</strong> Jaiswal Enterprises</p>
       <p><strong>GST:</strong> 07CLMPJ4994D1ZQ</p>
       <p><strong>WhatsApp:</strong> +91 95606 56584</p>
       <p><strong>Email:</strong> sales4wearindia@gmail.com</p>
     </div>
+
     <div class="contact-box">
       <p><strong>Address:</strong></p>
       <p>Mukundpur, New Delhi – 110042</p>
-      <p>Bulk & repeat orders welcome. Shop owners & resellers ke liye special support.</p>
+      <p>Resellers & wholesale buyers welcome.</p>
     </div>
+
   </div>
 </section>
 
@@ -459,19 +424,20 @@
 <footer>
   <div class="footer-inner">
     <div>© <span id="year"></span> Jaiswal Enterprises. All rights reserved.</div>
-    <div>COD available with 10% advance · PAN India courier.</div>
+    <div>COD available · PAN India courier service.</div>
   </div>
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-  function bulk(item){
-    const url =
-      "https://wa.me/919560656584?text=" +
-      encodeURIComponent("Hi, I need bulk " + item + " from Jaiswal Enterprises");
-    window.open(url, "_blank");
-  }
+function bulk(item){
+  window.open(
+    "https://wa.me/919560656584?text=" +
+    encodeURIComponent("Hi, I need bulk " + item + " from Jaiswal Enterprises"),
+    "_blank"
+  );
+}
 </script>
 
 </body>
